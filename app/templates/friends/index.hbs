@@ -2,8 +2,11 @@
 <ul>
   {{#each friend in model}}
     <li>{{#link-to 'friends.show' friend}}
-	{{friend.id}} - {{friend.firstName}} {{friend.lastName}}</li>
+	{{friend.id}} - {{friend.firstName}} {{friend.lastName}}
 	{{/link-to}}
+  	<a href="#" {{action "delete" friend}}>Delete</a>
+   </li>
+ 
   {{/each}}
 </ul>
 <h2>Total friends: {{model.length}}</h2>
