@@ -1,12 +1,18 @@
-<h1>templates/friends/index Friends Index</h1>
-<ul>
+<table class="primary">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Articles</th>
+    </tr>
+  </thead>
+  <tbody>
+     <h2>Total friends: {{model.length}}</h2>
   {{#each friend in model}}
-    <li>{{#link-to 'friends.show' friend}}
-	{{friend.id}} - {{friend.firstName}} {{friend.lastName}}
-	{{/link-to}}
-  	<a href="#" {{action "delete" friend}}>Delete</a>
-   </li>
- 
+    <tr>
+    <td>{{#link-to 'friends.show' friend}} {{friend.id}} - {{friend.firstName}} {{friend.lastName}} {{/link-to}} </td>
+
+    <td><a href="#" {{action "delete" friend}}>Delete</a></td>
+  </tr> 
   {{/each}}
-</ul>
-<h2>Total friends: {{model.length}}</h2>
+  </tbody>
+</table>
