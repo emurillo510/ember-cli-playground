@@ -1,0 +1,17 @@
+<h1>Articles Index</h1>
+<table class="primary">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Borrowed Since</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each article in model}}
+    <tr>
+      <td>{{article.description}}</td>
+      <td>{{article.createdAt}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
